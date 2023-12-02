@@ -19,12 +19,95 @@ html {
 
 body {
     font-family: 'Manrope', sans-serif;
-    font-size: 2.8rem;
+    background-color: var(--dark-blue);
 }
 
 img {
     max-width: 100%;
     display: block;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.advice-card {
+    background-color: var(--dark-grayish-blue);
+    padding: 4.8rem;
+    border-radius: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    width: min(90%, 54.8rem);
+    text-align: center;
+
+    & h1 {
+        color: var(--neon-green);
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5rem;
+    }
+
+    & .advice {
+        color: var(--light-cyan);
+        font-size: 2.8rem;
+        font-weight: 800;
+        line-height: 3.8rem;
+        margin-bottom: 1rem;
+    }
+
+    & .divider {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 1.6rem;
+    }
+
+    & .dice-btn {
+        background-color: var(--neon-green);
+        border-radius: 50%;
+        padding: 2rem;
+        border: none;
+        cursor: pointer;
+        margin: 0 auto -8rem;
+
+        &:hover {
+            box-shadow: 0 0 4rem var(--neon-green);
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .advice-card {
+        padding: 2.4rem;
+
+        & h1 {
+            font-size: 1rem;
+        }
+
+        & .advice {
+            font-size: 2.2rem;
+            line-height: 2.8rem;
+            margin-bottom: 0;
+        }
+
+        & .divider {
+            margin: 0 auto 0.5rem;
+            content: url('../images/pattern-divider-mobile.svg');
+        }
+    }
+}
+
+@media screen and (min-width: 376px) {
+    .advice-card {
+        & .divider {
+            content: url('../images/pattern-divider-desktop.svg');
+        }
+    }
 }
 
 .attribution {
@@ -34,6 +117,7 @@ img {
     padding: 1.6rem 0;
     font-size: 11px;
     text-align: center;
+    color: var(--light-cyan);
 
     & a {
         color: var(--footer-text);
